@@ -34,14 +34,12 @@ python `
 Twenty-dimensional Gaussian experiment:
 
 ```powershell
-\python `
+python `
   scn_mine\scripts\run_synthetic_benchmark.py `
   --scenario gaussian20 --rho 0.6 `
   --methods mine smile clip_dv scn
 ```
 
-MNIST two-view experiment (reads the existing raw IDX files without modifying
-them):
 
 ```powershell
 python `
