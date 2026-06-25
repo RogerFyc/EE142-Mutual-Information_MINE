@@ -2,11 +2,7 @@
 
 This is a compact PyTorch reproduction of **Mutual Information Neural
 Estimation** (arXiv:1801.04062v5). It includes the core estimator, simplified
-Section 4.1 / 4.2 experiments, and a runnable 25-Gaussians Information
-Bottleneck application experiment. The
-`mine-pytorch-master` directory in the workspace was used only as a reference;
-this implementation is independent and does not depend on old PyTorch
-Lightning APIs.
+Section 4.1 / 4.2 experiments.
 
 ## Scope
 
@@ -24,7 +20,6 @@ Implemented:
 - Optional KSG/Kraskov nearest-neighbor baseline for Figure 1 style plots.
 - Section 4.2 style nonlinear dependence experiment with 2-dimensional random
   variables and `identity`, `cubic`, `sin(x)` transforms.
-- MINE-regularized Information Bottleneck toy experiment.
 
 ## Environment
 
@@ -150,7 +145,7 @@ python `
 Twenty-dimensional Gaussian experiment:
 
 ```powershell
-\python `
+python `
   scn_mine\scripts\run_synthetic_benchmark.py `
   --scenario gaussian20 --rho 0.6 `
   --methods mine smile clip_dv scn
