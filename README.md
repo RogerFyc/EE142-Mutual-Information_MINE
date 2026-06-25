@@ -1,8 +1,7 @@
 # MINE Reproduction
 
-This is a compact PyTorch reproduction of **Mutual Information Neural
-Estimation** (arXiv:1801.04062v5). It includes the core estimator, simplified
-Section 4.1 / 4.2 experiments.
+This is a PyTorch reproduction of **Mutual Information Neural
+Estimation** ([arXiv:1801.04062v5](https://arxiv.org/pdf/1801.04062)). It also includes our SCN-MINE improvement.
 
 ## Scope
 
