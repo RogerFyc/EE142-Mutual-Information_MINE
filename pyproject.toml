@@ -1,0 +1,19 @@
+[project]
+name = "mine-reproduction"
+version = "0.1.0"
+description = "A compact PyTorch reproduction of Mutual Information Neural Estimation (MINE)."
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "torch",
+]
+
+[project.optional-dependencies]
+kraskov = ["scikit-learn"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
