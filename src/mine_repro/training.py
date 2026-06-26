@@ -87,7 +87,6 @@ def train_mine_reference(
     lr: float,
     device: torch.device,
 ) -> TrainResult:
-    """Match the fixed-dataset loop used by mine-pytorch-master's notebook."""
     mine.to(device)
     train_x = train_x.to(device)
     train_y = train_y.to(device)
