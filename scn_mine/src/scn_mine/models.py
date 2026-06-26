@@ -16,7 +16,6 @@ def _activation(name: str) -> nn.Module:
 
 
 class PairScoreHead(nn.Module):
-    """Score all pairs of two equally sized embedding batches."""
 
     def __init__(
         self,
@@ -60,7 +59,6 @@ class PairScoreHead(nn.Module):
 
 
 class PairwiseCritic(nn.Module):
-    """Joint vector critic producing all scores a_theta(x_i, y_j)."""
 
     def __init__(
         self,
@@ -118,7 +116,6 @@ class SmallImageEncoder(nn.Module):
 
 
 class SharedImagePairCritic(nn.Module):
-    """Shared image encoder plus a joint critic head."""
 
     def __init__(
         self,
