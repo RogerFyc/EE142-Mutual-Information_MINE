@@ -14,8 +14,6 @@ def logmeanexp(x: torch.Tensor, dim: int = 0) -> torch.Tensor:
 
 
 class EMALogMeanExp(torch.autograd.Function):
-    """MINE gradient correction using an EMA estimate of E_q exp(T)."""
-
     @staticmethod
     def forward(ctx, scores: torch.Tensor, running_exp_mean: torch.Tensor) -> torch.Tensor:
         ctx.save_for_backward(scores, running_exp_mean)
@@ -30,7 +28,6 @@ class EMALogMeanExp(torch.autograd.Function):
 
 
 class StatisticsNetwork(nn.Module):
-    """MLP T_theta(x,y) used in the Donsker-Varadhan lower bound."""
 
     def __init__(
         self,
@@ -60,13 +57,6 @@ class StatisticsNetwork(nn.Module):
 
 
 class MINE(nn.Module):
-    """Mutual Information Neural Estimator.
-
-    ``loss="mine"`` maximizes the Donsker-Varadhan lower bound with the EMA
-    gradient correction from Algorithm 1. ``loss="biased"`` uses the naive
-    batch log-mean-exp term, and ``loss="fdiv"`` maximizes the MINE-f bound.
-    The training loss returns the negative bound for standard minimization.
-    """
 
     def __init__(
         self,
@@ -136,16 +126,6 @@ class MINE(nn.Module):
 
         return -(joint_term - marginal_term)
 
-    # @torch.no_grad()
-    # def estimate(
-    #     self,
-    #     x: torch.Tensor,
-    #     y: torch.Tensor,
-    #     y_marginal: torch.Tensor | None = None,
-    # ) -> torch.Tensor:
-    #     joint_term = self.statistics_network(x, y).mean()
-    #     marginal_scores = self._marginal_scores(x, y, y_marginal)
-    #     return joint_term - logmeanexp(marginal_scores, dim=0)
     @torch.no_grad()
     def estimate(
         self,
