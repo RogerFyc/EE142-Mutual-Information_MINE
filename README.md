@@ -150,14 +150,14 @@ python `
   --methods mine smile clip_dv scn
 ```
 
-Plot:
+Plot in comparison with true MI:
 
 ```powershell
 python `
   scn_mine\scripts\plot_gaussian20_rho_curve.py `
   --dim 20 `
   --rhos -0.99 -0.9 -0.7 -0.5 -0.3 -0.1 0 0.1 0.3 0.5 0.7 0.9 0.99 `
-  --methods mine smile clip_dv scn `
+  --methods mine smile scn `
   --steps 2000 `
   --batch-size 128 `
   --lr 0.0001 `
