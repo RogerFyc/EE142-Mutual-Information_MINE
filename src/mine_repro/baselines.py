@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 import math
-
 import numpy as np
 
 
@@ -28,12 +26,6 @@ def kraskov_mi(
     y: np.ndarray,
     k: int = 3,
 ) -> float:
-    """KSG/Kraskov MI estimator with max norm neighborhoods.
-
-    This implementation intentionally depends on scikit-learn only when called.
-    If scikit-learn is unavailable, callers can catch ImportError and skip the
-    baseline gracefully.
-    """
     try:
         from sklearn.neighbors import KDTree, NearestNeighbors
     except ImportError as exc:
