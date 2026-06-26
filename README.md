@@ -160,5 +160,6 @@ python `
   --steps 2000 `
   --batch-size 128 `
   --lr 0.0001 `
-  --outdir scn_mine\outputs\gaussian20_rho_curve_stable'''
+  --outdir scn_mine\outputs\gaussian20_rho_curve_stable
+'''
 
