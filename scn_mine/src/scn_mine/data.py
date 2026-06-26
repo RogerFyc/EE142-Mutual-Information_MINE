@@ -64,7 +64,6 @@ class CorrelatedGaussianSampler:
 
 
 class NonlinearNuisanceSampler:
-    """Invertible nonlinear signal with independent nuisance dimensions."""
 
     def __init__(
         self,
