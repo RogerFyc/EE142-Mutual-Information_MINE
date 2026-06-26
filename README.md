@@ -152,7 +152,8 @@ python `
 
 Plot:
 
-'''python `
+```powershell
+python `
   --dim 20 `
   --rhos -0.99 -0.9 -0.7 -0.5 -0.3 -0.1 0 0.1 0.3 0.5 0.7 0.9 0.99 `
   --methods mine smile clip_dv scn `
