@@ -20,7 +20,6 @@ def set_seed(seed: int) -> None:
 
 
 def true_gaussian_mi(dim: int, rho: float) -> float:
-    """Analytic MI for dim pairs with corr(X_i, Y_i)=rho."""
     if abs(rho) >= 1.0:
         raise ValueError("rho must be in (-1, 1)")
     return -0.5 * dim * math.log(1.0 - rho**2)
@@ -32,7 +31,6 @@ def sample_correlated_gaussian(
     rho: float,
     device: torch.device | str = "cpu",
 ) -> tuple[torch.Tensor, torch.Tensor]:
-    """Sample X ~ N(0,I), Y = rho X + sqrt(1-rho^2) eps."""
     x = torch.randn(batch_size, dim, device=device)
     eps = torch.randn(batch_size, dim, device=device)
     y = rho * x + math.sqrt(1.0 - rho**2) * eps
@@ -84,7 +82,6 @@ def sample_gaussian_grid(
     spacing: float = 2.0,
     device: torch.device | str = "cpu",
 ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
-    """Sample from the 25-Gaussians toy distribution used in MINE applications."""
     centers = gaussian_grid_centers(grid_size, spacing, device)
     labels = torch.randint(0, centers.shape[0], (batch_size,), device=device)
     samples = centers[labels] + std * torch.randn(batch_size, 2, device=device)
@@ -100,7 +97,6 @@ def sample_noisy_function(
     function: TensorFunction,
     device: torch.device | str = "cpu",
 ) -> tuple[torch.Tensor, torch.Tensor]:
-    """Sample X ~ U[-1,1]^d and Y=f(X)+sigma eps."""
     x = 2.0 * torch.rand(batch_size, dim, device=device) - 1.0
     y = function(x) + sigma * torch.randn_like(x)
     return x, y
