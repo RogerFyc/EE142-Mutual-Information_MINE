@@ -12,8 +12,6 @@ EPS = 1e-8
 
 
 class EMALogMeanExp(torch.autograd.Function):
-    """Original MINE gradient correction with an EMA denominator."""
-
     @staticmethod
     def forward(
         ctx,
@@ -116,7 +114,6 @@ class ObjectiveOutput:
 
 
 class MIObjective(nn.Module):
-    """MINE-family objectives evaluated from an all-pairs score matrix."""
 
     def __init__(self, config: ObjectiveConfig) -> None:
         super().__init__()
