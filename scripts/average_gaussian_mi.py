@@ -18,7 +18,6 @@ for f in files:
 
 df = pd.concat(dfs, ignore_index=True)
 
-# 按 rho 和 loss 取平均
 summary = (
     df.groupby(["loss", "rho"], as_index=False)
       .agg(
@@ -31,7 +30,6 @@ summary = (
 out_csv = base / "gaussian_20d_3seed_average.csv"
 summary.to_csv(out_csv, index=False)
 
-# 画均值曲线
 plt.figure(figsize=(7, 4.5))
 
 label_map = {
@@ -55,7 +53,6 @@ for loss_name in ["mine", "fdiv", "kraskov"]:
         label=label_map.get(loss_name, loss_name),
     )
 
-# True MI 只画一次
 truth = summary[summary["loss"] == summary["loss"].iloc[0]].sort_values("rho")
 plt.plot(
     truth["rho"],
