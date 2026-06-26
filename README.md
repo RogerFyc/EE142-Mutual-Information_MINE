@@ -150,3 +150,14 @@ python `
   --methods mine smile clip_dv scn
 ```
 
+Plot:
+
+'''python `
+  --dim 20 `
+  --rhos -0.99 -0.9 -0.7 -0.5 -0.3 -0.1 0 0.1 0.3 0.5 0.7 0.9 0.99 `
+  --methods mine smile clip_dv scn `
+  --steps 2000 `
+  --batch-size 128 `
+  --lr 0.0001 `
+  --outdir scn_mine\outputs\gaussian20_rho_curve_stable'''
+
