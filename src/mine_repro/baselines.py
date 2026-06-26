@@ -7,7 +7,6 @@ EULER_GAMMA = 0.5772156649015329
 
 
 def _digamma_positive_integer(n: np.ndarray | int) -> np.ndarray | float:
-    """Exact psi(n) for positive integers through harmonic numbers."""
     arr = np.asarray(n, dtype=np.int64)
     if np.any(arr <= 0):
         raise ValueError("digamma approximation expects positive integer inputs")
