@@ -159,8 +159,8 @@ python `
   --rhos -0.99 -0.9 -0.7 -0.5 -0.3 -0.1 0 0.1 0.3 0.5 0.7 0.9 0.99 `
   --methods mine smile scn `
   --steps 2000 `
-  --batch-size 128 `
-  --lr 0.0001 `
+  --batch-size 256 `
+  --lr 0.00005 `
   --outdir scn_mine\outputs\gaussian20_rho_curve_stable
 ```
 
